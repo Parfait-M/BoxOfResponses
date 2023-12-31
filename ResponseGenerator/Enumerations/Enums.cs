@@ -16,7 +16,8 @@ namespace ResponseGenerator.Enumerations
 
     internal enum RESPONSE_STYLES
     {
-        STANDARD,
+        STANDARD_MALE,
+        STANDARD_FEMALE,
         NARUTO
     }
 }

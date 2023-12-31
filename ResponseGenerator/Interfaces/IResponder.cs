@@ -1,4 +1,5 @@
-﻿using ResponseGenerator.Enumerations;
+﻿using ResponseGenerator.Classes;
+using ResponseGenerator.Enumerations;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,8 @@ namespace ResponseGenerator.Interfaces
     {
         string GetResponse( KEYWORDS keyword );
 
-        RESPONSE_STYLES ResponseStyle { get; set; }
+        void SetResponseStyle( ResponseStyles style );
+
+        ResponseStyles ResponseStyles { get; }
     }
 }

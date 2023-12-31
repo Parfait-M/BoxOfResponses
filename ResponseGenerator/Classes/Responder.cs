@@ -10,16 +10,42 @@ namespace ResponseGenerator.Classes
 {
     internal class Responder : IResponder
     {
-        public RESPONSE_STYLES ResponseStyle { get; set; }
+        ResponseStyles _responseStyle;
 
-        public Responder( RESPONSE_STYLES style )
+        public Responder( ResponseStyles style )
         {
-            ResponseStyle = style;
+            _responseStyle = style;
+        }
+
+        ResponseStyles IResponder.ResponseStyles { get { return _responseStyle; } }
+
+        void IResponder.SetResponseStyle( ResponseStyles style )
+        {
+            _responseStyle = style;
         }
 
         string IResponder.GetResponse( KEYWORDS keyword )
         {
-            throw new NotImplementedException();
+            string response = null;
+
+            switch( keyword )
+            {
+                case KEYWORDS.AH_CHEEW:
+                    break;
+                case KEYWORDS.GOOD_MORNING:
+                    response = "Good morning";
+                    break;
+                case KEYWORDS.GOOD_AFTERNOON:
+                    response = "Good afternoon";
+                    break;
+                case KEYWORDS.GOOD_EVENING:
+                    response = "Good evening";
+                    break;
+                default:
+                    break;
+            }
+
+            return _responseStyle.Prefix + response + _responseStyle.Suffix;
         }
     }
 }

@@ -9,8 +9,11 @@ namespace ResponseGenerator.Interfaces
     internal interface ISpeaker
     {
         void Start();
+        
         void Stop();
-        int NumResponses {  get; }
+        
+        string[] Responses { get; }
+        string Keywords { get; }
         TimeSpan ListeningDuration { get; }
     }
 }
