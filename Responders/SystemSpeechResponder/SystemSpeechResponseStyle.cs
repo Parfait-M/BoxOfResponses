@@ -1,19 +1,19 @@
-﻿using ResponseGenerator.Enumerations;
+﻿using SharedEnumerations;
+using SharedInterfaces;
 using System;
 using System.Collections.Generic;
-
 using System.Linq;
 using System.Speech.Synthesis;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ResponseGenerator.Classes
+namespace SystemSpeechResponder
 {
-    internal class ResponseStyles
+    public class SystemSpeechResponseStyle : IResponseStyle
     {
         Styles _style;
 
-        public ResponseStyles( RESPONSE_STYLES style )
+        public SystemSpeechResponseStyle( RESPONSE_STYLES style )
         {
             switch( style )
             {
@@ -27,14 +27,14 @@ namespace ResponseGenerator.Classes
                     _style = new Naruto();
                     break;
                 default:
-                    throw new ApplicationException( $"Invalid \"RESPONSE_STYLES\" value ({style}). Expected [{string.Join( ", ", Enum.GetValues<RESPONSE_STYLES>() )}]" );
+                    throw new ApplicationException( $"Invalid \"RESPONSE_STYLES\" value ({style}). Expected [{string.Join( ", " , Enum.GetValues<RESPONSE_STYLES>() )}]" );
             }
         }
 
-        internal string Prefix      => _style.Prefix;
-        internal string Suffix      => _style.Suffix;
-        internal VoiceGender Gender => _style.Gender;
-        internal VoiceAge Age       => _style.Age;
+        string IResponseStyle.Prefix => _style.Prefix;
+        string IResponseStyle.Suffix => _style.Suffix;
+        dynamic IResponseStyle.Gender => _style.Gender;
+        dynamic IResponseStyle.Age => _style.Age;
 
         abstract class Styles
         {
@@ -53,7 +53,7 @@ namespace ResponseGenerator.Classes
             internal override VoiceAge Age => VoiceAge.Adult;
         }
 
-        class StandardFemale : Styles 
+        class StandardFemale : Styles
         {
             internal override VoiceGender Gender => VoiceGender.Female;
             internal override VoiceAge Age => VoiceAge.Adult;

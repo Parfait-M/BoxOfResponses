@@ -1,19 +1,16 @@
-﻿using ResponseGenerator.Enumerations;
-using ResponseGenerator.Interfaces;
+﻿using SharedEnumerations;
+using SharedInterfaces;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Speech.Recognition;
-using Google.Cloud.Speech.V1;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Speech;
-using Google.Protobuf.WellKnownTypes;
-using System.Collections;
+using Utils;
 
-namespace ResponseGenerator.Classes
+namespace SystemSpeechListener
 {
-    internal class Listener : IListener
+    public class Listener : IListener
     {
         Thread                          _listeningThread;
         ManualResetEvent                _stopListening = new ManualResetEvent( false );
@@ -27,7 +24,7 @@ namespace ResponseGenerator.Classes
         public Listener()
         {
             _speechRecognitionEngine = new SpeechRecognitionEngine();
-            _keywordStringPairs = new Dictionary<KEYWORDS, string>();
+            _keywordStringPairs = new Dictionary<KEYWORDS , string>();
         }
 
         void IListener.StartListening( KEYWORDS[] keywords )
@@ -95,13 +92,6 @@ namespace ResponseGenerator.Classes
                 Console.WriteLine( "stoppped listenning!" );
                 if( result != null )
                 {
-                    //string path = "D:\\nameAudio.wav";
-                    //using( Stream outputStream = new FileStream( path , FileMode.Create ) )
-                    //{
-                    //    RecognizedAudio nameAudio = result.Audio;
-                    //    nameAudio.WriteToWaveStream( outputStream );
-                    //    outputStream.Close();
-                    //}
                     sentence = result.Text;
                     Console.WriteLine( $"heard: {result.Text}, confidence: {result.Confidence}" );
                 }
@@ -123,7 +113,7 @@ namespace ResponseGenerator.Classes
                 // Simple method to extract keywords from sentence
                 foreach( var pair in _keywordStringPairs )
                 {
-                    if( lowerCaseSentence.Contains( pair.Value ))
+                    if( lowerCaseSentence.Contains( pair.Value ) )
                         keywords = keywords.Append( pair.Key ).ToArray();
                 }
             }
@@ -136,16 +126,16 @@ namespace ResponseGenerator.Classes
                 KeywordSpokenEvent?.Invoke( keyword );
         }
 
-        private Dictionary<KEYWORDS, string> GetKeywordStringPairs( KEYWORDS[] keywords )
+        private Dictionary<KEYWORDS , string> GetKeywordStringPairs( KEYWORDS[] keywords )
         {
             var keywordStr = new Dictionary<KEYWORDS, string>();
 
             if( keywords != null )
             {
-                foreach ( KEYWORDS keyword in keywords )
+                foreach( KEYWORDS keyword in keywords )
                 {
                     var str = keyword.ToString().Replace('_', ' ').ToLower();
-                    keywordStr.Add( keyword, str );
+                    keywordStr.Add( keyword , str );
                 }
             }
             return keywordStr;

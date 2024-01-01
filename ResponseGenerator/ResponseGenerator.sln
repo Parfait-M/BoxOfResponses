@@ -3,7 +3,33 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResponseGenerator", "ResponseGenerator.csproj", "{6C1ECEFD-8D04-4B00-AAEB-16AE3DD8F3BA}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Responders", "Responders", "{AFBCF62D-5010-4D7F-AD6B-CEA2A6FFC8EC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Listeners", "Listeners", "{1C8B4553-8FCC-491A-8551-9D3AF78BD7DF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{870E0E5D-B682-46A8-AD48-FC7E76867186}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Speakers", "Speakers", "{8E66118B-7E82-4C7F-8AFC-91977C559850}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedInterfaces", "..\Shared\SharedInterfaces\SharedInterfaces.csproj", "{4DF81191-F1B0-46AD-B0D3-8E0591941F74}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedEnumerations", "..\Shared\SharedEnumerations\SharedEnumerations.csproj", "{BDADA63F-CCDB-4C27-A5DA-F19B38AFB388}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SystemSpeechResponder", "..\Responders\SystemSpeechResponder\SystemSpeechResponder.csproj", "{BEA0598F-A62C-427E-8B62-1B93CD2EEEE6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GCloudResponder", "..\Responders\GCloudResponder\GCloudResponder.csproj", "{B203B34F-F15D-4342-A82D-3E4DFC68D78D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SystemSpeechListener", "..\Listeners\SystemSpeechListener\SystemSpeechListener.csproj", "{95ABF5FA-B2EC-43AD-B2E2-2FEA9D18D35F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utils", "..\Shared\Utils\Utils.csproj", "{ECB66E18-4815-4529-8955-B108DC441564}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testers", "Testers", "{A1D258A5-E059-4B31-8181-EC2F70EC387D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SystemSpeechSpeaker", "..\Speakers\SystemSpeechSpeaker\SystemSpeechSpeaker.csproj", "{A7003113-47EC-4D1F-8BFA-DD20880A13E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SystemSpeechTester", "..\Testers\SystemSpeechTester\SystemSpeechTester.csproj", "{40EDD44D-F552-404A-AA8A-DBCABC1A24F6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{2F838395-ACE4-4C55-A27E-304963D95345}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,13 +37,51 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{6C1ECEFD-8D04-4B00-AAEB-16AE3DD8F3BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6C1ECEFD-8D04-4B00-AAEB-16AE3DD8F3BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6C1ECEFD-8D04-4B00-AAEB-16AE3DD8F3BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6C1ECEFD-8D04-4B00-AAEB-16AE3DD8F3BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4DF81191-F1B0-46AD-B0D3-8E0591941F74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DF81191-F1B0-46AD-B0D3-8E0591941F74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DF81191-F1B0-46AD-B0D3-8E0591941F74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DF81191-F1B0-46AD-B0D3-8E0591941F74}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDADA63F-CCDB-4C27-A5DA-F19B38AFB388}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDADA63F-CCDB-4C27-A5DA-F19B38AFB388}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDADA63F-CCDB-4C27-A5DA-F19B38AFB388}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDADA63F-CCDB-4C27-A5DA-F19B38AFB388}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BEA0598F-A62C-427E-8B62-1B93CD2EEEE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEA0598F-A62C-427E-8B62-1B93CD2EEEE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEA0598F-A62C-427E-8B62-1B93CD2EEEE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEA0598F-A62C-427E-8B62-1B93CD2EEEE6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B203B34F-F15D-4342-A82D-3E4DFC68D78D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B203B34F-F15D-4342-A82D-3E4DFC68D78D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B203B34F-F15D-4342-A82D-3E4DFC68D78D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B203B34F-F15D-4342-A82D-3E4DFC68D78D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95ABF5FA-B2EC-43AD-B2E2-2FEA9D18D35F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95ABF5FA-B2EC-43AD-B2E2-2FEA9D18D35F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95ABF5FA-B2EC-43AD-B2E2-2FEA9D18D35F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95ABF5FA-B2EC-43AD-B2E2-2FEA9D18D35F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ECB66E18-4815-4529-8955-B108DC441564}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECB66E18-4815-4529-8955-B108DC441564}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECB66E18-4815-4529-8955-B108DC441564}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECB66E18-4815-4529-8955-B108DC441564}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7003113-47EC-4D1F-8BFA-DD20880A13E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7003113-47EC-4D1F-8BFA-DD20880A13E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7003113-47EC-4D1F-8BFA-DD20880A13E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7003113-47EC-4D1F-8BFA-DD20880A13E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40EDD44D-F552-404A-AA8A-DBCABC1A24F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40EDD44D-F552-404A-AA8A-DBCABC1A24F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40EDD44D-F552-404A-AA8A-DBCABC1A24F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40EDD44D-F552-404A-AA8A-DBCABC1A24F6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4DF81191-F1B0-46AD-B0D3-8E0591941F74} = {870E0E5D-B682-46A8-AD48-FC7E76867186}
+		{BDADA63F-CCDB-4C27-A5DA-F19B38AFB388} = {870E0E5D-B682-46A8-AD48-FC7E76867186}
+		{BEA0598F-A62C-427E-8B62-1B93CD2EEEE6} = {AFBCF62D-5010-4D7F-AD6B-CEA2A6FFC8EC}
+		{B203B34F-F15D-4342-A82D-3E4DFC68D78D} = {AFBCF62D-5010-4D7F-AD6B-CEA2A6FFC8EC}
+		{95ABF5FA-B2EC-43AD-B2E2-2FEA9D18D35F} = {1C8B4553-8FCC-491A-8551-9D3AF78BD7DF}
+		{ECB66E18-4815-4529-8955-B108DC441564} = {870E0E5D-B682-46A8-AD48-FC7E76867186}
+		{A7003113-47EC-4D1F-8BFA-DD20880A13E8} = {8E66118B-7E82-4C7F-8AFC-91977C559850}
+		{40EDD44D-F552-404A-AA8A-DBCABC1A24F6} = {A1D258A5-E059-4B31-8181-EC2F70EC387D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {148808EF-6984-4B91-9C5E-B330EAF113B5}

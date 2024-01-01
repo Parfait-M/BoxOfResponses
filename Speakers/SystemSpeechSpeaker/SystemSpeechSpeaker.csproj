@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Speech" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Listeners\SystemSpeechListener\SystemSpeechListener.csproj" />
+    <ProjectReference Include="..\..\Responders\SystemSpeechResponder\SystemSpeechResponder.csproj" />
+    <ProjectReference Include="..\..\Shared\SharedInterfaces\SharedInterfaces.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,13 +1,13 @@
-﻿using ResponseGenerator.Enumerations;
+﻿using SharedEnumerations;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ResponseGenerator.Interfaces
+namespace SharedInterfaces
 {
-    internal interface IListener
+    public interface IListener
     {
         void StartListening( KEYWORDS[] keywords );
         void StopListening( KEYWORDS[] keywords );

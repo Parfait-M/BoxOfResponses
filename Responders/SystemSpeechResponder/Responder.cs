@@ -1,25 +1,25 @@
-﻿using ResponseGenerator.Enumerations;
-using ResponseGenerator.Interfaces;
+﻿using SharedEnumerations;
+using SharedInterfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ResponseGenerator.Classes
+namespace SystemSpeechResponder
 {
-    internal class Responder : IResponder
+    public class Responder : IResponder
     {
-        ResponseStyles _responseStyle;
+        IResponseStyle _responseStyle;
 
-        public Responder( ResponseStyles style )
+        public Responder( IResponseStyle style )
         {
             _responseStyle = style;
         }
 
-        ResponseStyles IResponder.ResponseStyles { get { return _responseStyle; } }
+        IResponseStyle IResponder.ResponseStyle { get { return _responseStyle; } }
 
-        void IResponder.SetResponseStyle( ResponseStyles style )
+        void IResponder.SetResponseStyle( IResponseStyle style )
         {
             _responseStyle = style;
         }

@@ -1,18 +1,17 @@
-﻿using ResponseGenerator.Classes;
-using ResponseGenerator.Interfaces;
-using ResponseGenerator.Enumerations;
-using Google.Cloud.Speech.V1;
+﻿using SharedEnumerations;
+using SharedInterfaces;
+using SystemSpeechSpeaker;
 
-namespace ResponseGenerator
+namespace SystemSpeechTester
 {
-    internal class TestResponses
+    internal class Program
     {
         static void Main( string[] args )
         {
             RESPONSE_STYLES currentStyle = RESPONSE_STYLES.STANDARD_MALE;
             KEYWORDS[] currentKeyWords = new[] {KEYWORDS.GOOD_MORNING };
             ISpeaker speaker = new Speaker( currentStyle, currentKeyWords );
-            
+
             while( true )
             {
                 try
@@ -98,7 +97,7 @@ namespace ResponseGenerator
         static RESPONSE_STYLES ChangeResponseStyle()
         {
             DisplayEnum<RESPONSE_STYLES>();
-            Console.Write( "Enter selection: ");
+            Console.Write( "Enter selection: " );
             try
             {
                 var response = Console.ReadLine();
@@ -133,7 +132,7 @@ namespace ResponseGenerator
         {
             int index = 1;
             var arr = Enum.GetValues<TEnum>().Select( val => $"{index++}. {val}" );
-            Console.WriteLine( string.Join( "\n", arr ) );
+            Console.WriteLine( string.Join( "\n" , arr ) );
         }
     }
 }
