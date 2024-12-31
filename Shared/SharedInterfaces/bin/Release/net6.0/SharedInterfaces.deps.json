@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "SharedInterfaces/1.0.0": {
+        "dependencies": {
+          "SharedEnumerations": "1.0.0"
+        },
+        "runtime": {
+          "SharedInterfaces.dll": {}
+        }
+      },
+      "SharedEnumerations/1.0.0": {
+        "runtime": {
+          "SharedEnumerations.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "SharedInterfaces/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SharedEnumerations/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

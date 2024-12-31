@@ -7,5 +7,5 @@
 /.vs
 /ResponseGenerator/bin/Debug/net6.0
 /ResponseGenerator/.vs/ProjectEvaluation
-/*/*/bin/*
+/*/*/bin/Debug/*
 /*/*/obj/*

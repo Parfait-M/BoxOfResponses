@@ -1,0 +1,117 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "SystemSpeechSpeaker/1.0.0": {
+        "dependencies": {
+          "SharedInterfaces": "1.0.0",
+          "System.Speech": "8.0.0",
+          "SystemSpeechListener": "1.0.0",
+          "SystemSpeechResponder": "1.0.0"
+        },
+        "runtime": {
+          "SystemSpeechSpeaker.dll": {}
+        }
+      },
+      "System.Speech/8.0.0": {
+        "runtime": {
+          "lib/net6.0/System.Speech.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.23.53103"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/net6.0/System.Speech.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.23.53103"
+          }
+        }
+      },
+      "SharedEnumerations/1.0.0": {
+        "runtime": {
+          "SharedEnumerations.dll": {}
+        }
+      },
+      "SharedInterfaces/1.0.0": {
+        "dependencies": {
+          "SharedEnumerations": "1.0.0"
+        },
+        "runtime": {
+          "SharedInterfaces.dll": {}
+        }
+      },
+      "SystemSpeechListener/1.0.0": {
+        "dependencies": {
+          "SharedInterfaces": "1.0.0",
+          "System.Speech": "8.0.0",
+          "Utils": "1.0.0"
+        },
+        "runtime": {
+          "SystemSpeechListener.dll": {}
+        }
+      },
+      "SystemSpeechResponder/1.0.0": {
+        "dependencies": {
+          "SharedInterfaces": "1.0.0",
+          "System.Speech": "8.0.0"
+        },
+        "runtime": {
+          "SystemSpeechResponder.dll": {}
+        }
+      },
+      "Utils/1.0.0": {
+        "dependencies": {
+          "SharedEnumerations": "1.0.0"
+        },
+        "runtime": {
+          "Utils.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "SystemSpeechSpeaker/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "System.Speech/8.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-CNuiA6vb95Oe5PRjClZEBiaju31vwB8OIeCgeSBXyZL6+MS4RVVB2X/C11z0xCkooHE3Vy91nM2z76emIzR+sg==",
+      "path": "system.speech/8.0.0",
+      "hashPath": "system.speech.8.0.0.nupkg.sha512"
+    },
+    "SharedEnumerations/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SharedInterfaces/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SystemSpeechListener/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SystemSpeechResponder/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Utils/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
